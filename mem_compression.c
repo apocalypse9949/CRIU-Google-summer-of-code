@@ -4,13 +4,12 @@
 #include <string.h>
 
 #define PAGE_SIZE 4096
-#define MAX_COMPRESSED_SIZE (PAGE_SIZE + 16) // Extra space for compression overhead
+#define MAX_COMPRESSED_SIZE (PAGE_SIZE + 16) // LZ4 overhead
 
 void dump_page(FILE *dump_file, char *page_data) {
     char compressed[MAX_COMPRESSED_SIZE]; 
     int compressed_size;
 
-    // Compress memory page using LZ4
     compressed_size = LZ4_compress_default(page_data, compressed, PAGE_SIZE, MAX_COMPRESSED_SIZE);
     
     if (compressed_size <= 0) {
