@@ -4,7 +4,7 @@ After implementing the changes, follow these steps for testing and benchmarking:
 
 ### Run CRIU with Compression:
 ```bash
-criu dump -t <PID> --compression
+criu dump --compression
 ```
 Verify the Dump File Size:
 ```linux
