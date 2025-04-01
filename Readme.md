@@ -14,7 +14,7 @@ Restore from the Compressed Dump:
 ``` bash
 criu restore --compression
 ```
-### ehnacements :
+### ehnacements to be developed :
 🔹 Support multiple compression algorithms (e.g., ZSTD, Gzip).
 🔹 Optimize for incremental dumps.
 🔹 Improve parallelization for faster compression.
