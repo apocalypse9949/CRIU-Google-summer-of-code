@@ -1,2 +1,2 @@
-// In crtools.c (or wherever the command line arguments are handled)
+//  command line arguments are handled here
 {"compression", no_argument, NULL, 'C'},
