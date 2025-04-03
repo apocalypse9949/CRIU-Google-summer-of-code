@@ -2,19 +2,18 @@ void restore_page(FILE *dump_file, char *output_page) {
     char compressed[MAX_COMPRESSED_SIZE];
     int compressed_size;
 
-    // Read compressed size from dump file
+   
     if (fread(&compressed_size, sizeof(int), 1, dump_file) != 1) {
         perror("Error reading compressed size from dump file");
         exit(EXIT_FAILURE);
     }
     
-    // Read the compressed data into memory
     if (fread(compressed, compressed_size, 1, dump_file) != 1) {
         perror("Error reading compressed data from dump file");
         exit(EXIT_FAILURE);
     }
 
-    // Decompress the data using LZ4
+    
     int decompressed_size = LZ4_decompress_safe(compressed, output_page, compressed_size, PAGE_SIZE);
     
     if (decompressed_size < 0) {
