@@ -17,7 +17,7 @@ void dump_page(FILE *dump_file, char *page_data) {
         exit(EXIT_FAILURE);
     }
 
-    // Write the compressed size first, then the compressed data
+  
     if (fwrite(&compressed_size, sizeof(int), 1, dump_file) != 1) {
         perror("Error writing compressed size to dump file");
         exit(EXIT_FAILURE);
